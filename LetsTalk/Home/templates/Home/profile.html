@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{margin-top:20px;}
+.avatar{
+width:200px;
+height:200px;
+}
+.value{
+color : #025839;
+font-weight: bold;
+}
+.p{
+font-weight: bold;
+font-family: 'Secular One', sans-serif;
+}
+</style>
+</head>
+<body style="background-color:#7fcc7a">
+<section>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/626fd8140423801.6241b91e24d9c.png" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+
+              <h5 class="my-3">{{name}}</h5>
+               <form method="POST">
+                {%csrf_token%}
+              <div class="form-group">
+                <p>"Add/Edit Your Bio"</p>
+              <textarea  class="form-control rounded-0" id="exampleFormControlTextarea2" rows="1" name="about_info"></textarea>
+              </div>
+              <div class="d-flex justify-content-center mb-2">
+                <input class="btn btn-outline-success ms-1 value" type="submit" value="Edit Profile">
+              </div>
+                 <br>
+                <a target="_parent" href="http://127.0.0.1:8000/homepage/{{user_name}}/ResetPassword" style="color: #025839" class="p">Update Your Password </a>
+</form>
+            </div>
+             {% include 'Home/flash-msg.html' %}
+          </div>
+
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">FULL NAME : </p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class=" mb-0 value">{{name}}</p>
+                  </div>
+                </div><hr>
+                  <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Gender : </p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="mb-0 value">{{gender}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">EMAIL</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="mb-0 value">{{email}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">DATE OF BIRTH : </p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class=" mb-0 value">{{bod}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">BIO : </p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class=" mb-0 value"> {{bio}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

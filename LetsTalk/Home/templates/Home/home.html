@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+<title>HOMEPAGE OF FRIENDS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body {
+height:100%;
+background-color: #666699;
+}
+
+.well {
+background-color: #ffffee
+}
+
+#content {
+padding: 15% 15% 5%;
+}
+
+.search-form {
+border-radius: 30px 0 0 30px;
+}
+
+.input-group {
+width:100%;
+}
+
+input-group-btn {
+max-width:38px;
+}
+p{
+font-family: 'Berkshire Swash', cursive;
+font-size:100px;
+}
+#search {
+border: 1px;
+}
+
+.search-btn {
+cursor:pointer;
+border-radius: 0 30px 30px 0;
+background-color:#fff;
+color:#669;
+
+}
+
+.text-center {
+color: #fff;
+}
+</style>
+</head>
+
+<body style="background-color:#7fcc7a">
+<nav style="background-color: #025839">
+<div class="container-fluid">
+ <div class="navbar-header"style="background-color: #025839">
+   <a class="navbar-brand"style="color:white"  href="#">FriendsChat</a>
+ </div>
+ <ul class="nav navbar-nav"style="background-color: #025839">
+   <li class="active"><a style="color:white" href="#">Home</a></li>
+   <li class="active"><a style="color:white"  href="addfriend">Add Friend</a></li>
+      <li class="active"><a style="color:white"  href="botchat">Bot Chat</a></li>
+
+   <li class="active"><a style="color:white"  href="profile">Profile</a></li>
+ </ul>
+
+ <ul class="nav navbar-nav navbar-right">
+   <li><a style="color:white"  href="/loadout/"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+ </ul>
+</div>
+</nav>
+
+<br>
+<h1 style="text-align:center"><span style="color:white">WELCOME TO HOME PAGE <br><p>Friends</p></span></h1>
+
+<div class="container">
+    <div id="content">
+      <form class='form-inline' method="POST">
+          {% csrf_token%}
+        <div class="input-group">
+          <input type='text' name='email' id='search' class="form-control search-form" placeholder="Search a Friend">
+          <span class="input-group-btn" style="width:20px">
+            <div class="input-group-btn" style="width:20px"class="d-flex justify-content-center mt-3 login_container" >
+                <input class="btn login_btn" type="submit" value="SEARCH">
+            </div>
+          </span>
+        </div>
+          {% include 'Home/flash-msg.html' %}
+      </form>
+
+
+
+  </div>
+</div>
+</body>
+</html>
